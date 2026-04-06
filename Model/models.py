@@ -1,10 +1,17 @@
 import torch
 import torch.nn as nn
+import s3prl.hub as hub
+
 
 class Wav2vec2BiEncoder(nn.Module):
     def __init__(self, upstream_model='wav2vec2',num_layers=6, feature_dim=768):
         super().__init__()
         self.upstream = torch.hub.load('s3prl/s3prl', upstream_model)
+        
+        print("Loaded upstream_model =", upstream_model)
+        print("Upstream class =", type(self.upstream))
+        print("Upstream model class =", type(getattr(self.upstream, "model", None)))
+        
         
         for param in self.upstream.parameters():
             param.requires_grad = True

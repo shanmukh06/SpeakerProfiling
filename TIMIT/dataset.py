@@ -5,7 +5,6 @@ import torch
 import numpy as np
 
 import torchaudio
-import wavencoder
 import random
 
 class TIMITDataset(Dataset):
@@ -97,3 +96,4 @@ class TIMITDataset(Dataset):
             gender = lam*gender + (1-lam)*mixup_gender
             
         return wav, torch.FloatTensor([height]), torch.FloatTensor([age]), torch.FloatTensor([gender])
+

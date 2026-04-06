@@ -1,2 +1,7 @@
 anaconda3-2020_pytorch.pbs
-__pycache__/*
+__pycache__/*.idea/
+__pycache__/
+wandb/
+timit.zip
+timit_data/
+checkpoints/

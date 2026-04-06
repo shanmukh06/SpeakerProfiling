@@ -45,3 +45,4 @@ class UncertaintyLoss(Module):
 
         return self.loss_var
 
+
